@@ -8,28 +8,32 @@
   */
 char *_getenv(const char *name)
 {
+	extern char **environ; /* External variable to access the environment*/
+
+	/* Iterate through the environment variables*/
 	char *variable;
 	int i, j;
-
 	for (i = 0; environ[i] != NULL; i++)
 	{
 		variable = environ[i];
 		j = 0;
-
+		
+		/* Compare the variable name with the requested name*/
 		while (name[j] != '\0' && variable[j] != '=' && name[j] == variable[j])
 		{
 			j++;
 		}
 
+		/* If the names match and the current character is '=', return the value*/
 		if (name[j] == '\0' && variable[j] == '=')
 		{
-			return (variable + j + 1);
-			/* Return pointer to value part of the variable after '='*/
+			return variable + j + 1;
 		}
 	}
-	return (NULL); /*If variable not found*/
-}
 
+	/* Variable not found, return NULL*/
+	return NULL;
+}
 /**
   * _getline - Read line of input from STDIN
   *
@@ -48,23 +52,25 @@ char *_getline()
 	}
 
 	bytesRead = read(STDIN_FILENO, buffer, MAX_BUFFER_SIZE);
-
 	if (bytesRead == -1)
 	{
 		perror("read");
 		exit(EXIT_FAILURE);
 	}
+
 	if (bytesRead == 0)
 	{
+		/*EOF encountered, exit the shell*/
 		free(buffer);
 		exit(EXIT_SUCCESS);
 	}
+
 	if (bytesRead > 0 && buffer[bytesRead - 1] == '\n')
 	{
 		buffer[bytesRead - 1] = '\0';
 	}
 
-	return (buffer);
+	return buffer;
 }
 
 /**
@@ -120,33 +126,34 @@ char *_strtok(char *str, const char *delim)
 int _atoi(char *s)
 {
 	int c = 0;
+	unsigned int ni = 0;
 	int min = 1;
-	int isDigit = 0;
-	unsigned int nv = 0;
+	int isi = 0;
 
-	/* Traverse input string until hitting null terminator*/
 	while (s[c])
 	{
 		if (s[c] == 45)
 		{
 			min *= -1;
 		}
+
 		while (s[c] >= 48 && s[c] <= 57)
 		{
-			isDigit = 1;
-			nv = (nv * 10) + (s[c] - '0');
+			isi = 1;
+			ni = (ni * 10) + (s[c] - '0');
 			c++;
 		}
-		if (isDigit == 1)
+
+		if (isi == 1)
 		{
 			break;
 		}
+
 		c++;
 	}
-	nv *= min;
-	return (nv);
+	ni *= min;
+	return (ni);
 }
-
 /**
   * _isdigit - Checks if a character is a digit
   * @c: Character to be checked

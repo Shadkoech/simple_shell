@@ -88,14 +88,18 @@ int _setenv(const char *name, const char *value, int overwrite)
 {
 	if (name == NULL || name[0] == '\0' || _strchr(name, '=') != NULL || value == NULL)
 	{
-		return (-1);
+		/*Invalid arguments.*/
+		return -1;
 	}
+	
 	if (overwrite)
 	{
-		return (_setenv_Update(name, value));
+		/*Update the existing environment variable or add a new one if it does not exist.*/
+		return _setenv_Update(name, value);
 	}
 	else
 	{
-		return (_setenv_Add_New(name, value));
+		/*Add a new environment variable if it does not exist.*/
+		return _setenv_Add_New(name, value);
 	}
 }
