@@ -8,7 +8,7 @@
   *
   *Return: void
   */
-void implement_cd(char *command, char **args, int arg_count)
+void implement_Cd(char *command, char **args, int arg_count)
 {
 	const char *message;
 

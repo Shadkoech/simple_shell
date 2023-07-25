@@ -9,7 +9,7 @@
   *
   *Return: (Void)
   */
-void execute_command(char *command, char **args, int arg_count)
+void execute_Command(char *command, char **args, int arg_count)
 {
 	pid_t pid = fork();
 	char *executable, *envp[] = {NULL}, executable_path[MAX_PATH_LENGTH];
