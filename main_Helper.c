@@ -10,19 +10,19 @@ void sigint_Handler(int signum)
 	(void)signum;
 }
 
+
 /**
   * shell_Prompt - Generate and display the shell prompt
   *
   */
-void shell_Prompt(void)
+void shell_prompt(void)
 {
 	char working_Curr_Dir[1024];
 	char prompt[1026];
 	size_t len;
 
-	if (isatty(STDIN_FILENO)) /*Check interactive mode*/
+	if (isatty(STDIN_FILENO)) /*interactive mode*/
 	{
-		/*get current working directory*/
 		getcwd(working_Curr_Dir, sizeof(working_Curr_Dir));
 		len = _strlen(working_Curr_Dir);
 
@@ -37,7 +37,7 @@ void shell_Prompt(void)
 		}
 		else
 		{
-			/* Provison for buffer overflow handling*/
+			/*Handle buffer overflow here, incase space for prompt not enough*/
 		}
 	}
 }
