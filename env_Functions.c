@@ -116,7 +116,6 @@ void implement_Unsetenv(char *command, char **args, int arg_count)
   */
 void implement_Env(char *command, char **args, int arg_count)
 {
-	extern char **environ;
 	char **env = environ;
 
 	while (*env)
