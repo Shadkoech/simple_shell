@@ -2,7 +2,7 @@
 
 
 /**
-  *process_command -Holds commands and executes them based on command's content
+  *process_Command -Holds commands and executes them based on command's content
   *@command: action commands entered by user
   *
   *Return: (void)

@@ -1,7 +1,7 @@
 #include "shell_K_J.h"
 
 /**
-  *implement_cd - function that changes working directory
+  *implement_Cd - function that changes working directory
   *@command: user input command
   *@args: array of strings with command arguments
   *@arg_count: Number of elements in the array

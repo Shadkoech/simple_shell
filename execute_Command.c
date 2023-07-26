@@ -2,7 +2,7 @@
 
 
 /**
-  *execute_command - executes commands with specified arguments in new process
+  *execute_Command - executes commands with specified arguments in new process
   *@command: user input command to be executed
   *@args: array of string with command arguments
   *@arg_count: number of elements in array of arguments
