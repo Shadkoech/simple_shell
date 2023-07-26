@@ -1,8 +1,7 @@
 This is Collaboration project meant to practice C-fundamentals learnt so far, through building a basic unix shell implementation.
 
-1- shell_K_J.c - implement_Separator() Processes input with multiple commands, separated 
-				       by;
-		 Main() Entry point into the shell program
+1- shell_K_J.c - 	implement_Separator() Processes input with multiple commands, separated by
+			Main() Entry point into the shell program
 2- main_Helper.c - sigint_Handler() Handler for SIGINT signal (Ctrl+C)
 	            shell_Prompt() Generate and deploy shell prompt
 3- shell_K_J.h - Header file, contains all the prototypes
