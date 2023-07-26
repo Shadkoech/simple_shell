@@ -1,12 +1,12 @@
 This file lists the contributors to this repository.
 
  1. Shadrack Koech <@Shadkoech>
-	- I found the Simple_Shell project to be a very comprehensive task. It's design gave me and my partner creative freedom to tackle the tasks and at the same time confined us into using a number of specified system and function calls. The collaborative experience and the application of learnt concepts in C-sprint 1, was very enriching. In my opinion some of the key aspects to be keen on in order to have a less backbreaking experince when handling this project include; 
+ 	- I found the Simple_Shell project to be a very comprehensive task. It's design gave me and my partner creative freedom to tackle the tasks and at the same time confined us into using a number of specified system and function calls. The collaborative experience and the application of learnt concepts in C-sprint 2, was very enriching. In my opinion some of the key aspects to be keen on in order to have a less backbreaking experince when handling this project include;
 	*Establing a proper plan and sequence of events before even attempting to code the shell
 	*Understanding the functionality of key function and system calls such as execve, fork, wait, exit, free among others
 	*Constantly checking memory leaks with every single new implementation. Memory leaks will really open for you the gates to sHell
 	*Keep checking the performance of the shell each cycle of new implementation
-	*Time management. 
+	*Time management.
 	*Most important of all;  Close collaboration and synegy with your partner
 
 	- My gratitude goes to my partner Joseph, whom we worked closely around the clock to come up with this shell that can handle: ls, ls -flags, cd, env, pwd, exit, EOF, command separator, applied custom files among many other functionalities
