@@ -12,11 +12,11 @@ int _strcmp(const char *s1, const char *s2)
 	while (*s1 && *s2)
 	{
 		if (*s1 != *s2)
-			return *s1 - *s2;
+			return (*s1 - *s2);
 		s1++;
 		s2++;
 	}
-	return *s1 - *s2;
+	return (*s1 - *s2);
 }
 
 /**
@@ -39,7 +39,7 @@ char *_strcpy(char *dest, const char *src)
 
 	*dest = '\0'; /* Null-terminate the destination string*/
 
-	return original_dest;
+	return (original_dest);
 }
 
 /**
@@ -61,7 +61,7 @@ char *_strdup(const char *src)
 		}
 	}
 
-	return dest;
+	return (dest);
 }
 /**
   * _strchr - Locate first occurrence of a character
@@ -76,12 +76,13 @@ char *_strchr(const char *s, int c)
 	{
 		if (*s == c)
 		{
-			return (char *)s;
+			return ((char *)s);
 		}
 		s++;
 	}
-	return NULL;
+	return (NULL);
 }
+
 /**
   * _strlen - Calculate length of string
   * @s: String whose length will be calculated
@@ -91,10 +92,11 @@ char *_strchr(const char *s, int c)
 int _strlen(const char *s)
 {
 	int c = 0;
+
 	while (*s != '\0')
 	{
 		c++;
 		s++;
 	}
-	return c;
+	return (c);
 }

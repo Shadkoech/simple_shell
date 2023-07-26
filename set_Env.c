@@ -86,20 +86,23 @@ int _setenv_Add_New(const char *name, const char *value)
   */
 int _setenv(const char *name, const char *value, int overwrite)
 {
-	if (name == NULL || name[0] == '\0' || _strchr(name, '=') != NULL || value == NULL)
+	if (name == NULL ||
+			name[0] == '\0' ||
+			_strchr(name, '=') != NULL ||
+			value == NULL)
 	{
 		/*Invalid arguments.*/
-		return -1;
+		return (-1);
 	}
-	
+
 	if (overwrite)
 	{
-		/*Update the existing environment variable or add a new one if it does not exist.*/
-		return _setenv_Update(name, value);
+		/*Update existing environment variable or add new one if it doesn't exist.*/
+		return (_setenv_Update(name, value));
 	}
 	else
 	{
 		/*Add a new environment variable if it does not exist.*/
-		return _setenv_Add_New(name, value);
+		return (_setenv_Add_New(name, value));
 	}
 }

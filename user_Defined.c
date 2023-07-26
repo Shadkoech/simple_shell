@@ -8,16 +8,15 @@
   */
 char *_getenv(const char *name)
 {
-	extern char **environ; /* External variable to access the environment*/
-
 	/* Iterate through the environment variables*/
 	char *variable;
 	int i, j;
+
 	for (i = 0; environ[i] != NULL; i++)
 	{
 		variable = environ[i];
 		j = 0;
-		
+
 		/* Compare the variable name with the requested name*/
 		while (name[j] != '\0' && variable[j] != '=' && name[j] == variable[j])
 		{
@@ -27,12 +26,12 @@ char *_getenv(const char *name)
 		/* If the names match and the current character is '=', return the value*/
 		if (name[j] == '\0' && variable[j] == '=')
 		{
-			return variable + j + 1;
+			return (variable + j + 1);
 		}
 	}
 
 	/* Variable not found, return NULL*/
-	return NULL;
+	return (NULL);
 }
 /**
   * _getline - Read line of input from STDIN
@@ -70,7 +69,7 @@ char *_getline()
 		buffer[bytesRead - 1] = '\0';
 	}
 
-	return buffer;
+	return (buffer);
 }
 
 /**
